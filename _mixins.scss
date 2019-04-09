@@ -1,0 +1,44 @@
+@mixin reset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flex1 {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex2 {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin media-600px {
+  .section_images {
+    @include flex2();
+  }
+
+  .section_text {
+    width: 70%;
+  }
+
+  .aside {
+    @include flex2();
+  }
+
+  .first_aside,
+  .second_aside,
+  .third_aside,
+  .fourth_aside {
+    width: 45%;
+    margin: 0.5rem;
+  }
+}
+
+@mixin asides {
+  border: 0.2rem solid $colour2;
+  padding: $size-1rem;
+  margin-bottom: $size-1rem;
+}

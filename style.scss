@@ -1,0 +1,94 @@
+@import "mixins";
+
+$font1: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+$font2: Arial, Helvetica, sans-serif;
+$size-1rem: 1rem;
+$colour1: rgba(0, 0, 255, 0.514);
+$colour2: rgba(0, 0, 255, 0.678);
+
+* {
+  @include reset;
+}
+
+.header {
+  height: 6rem;
+  text-align: center;
+  font-family: $font1;
+  padding: 1.5rem;
+}
+
+h1,
+h2 {
+  font-size: $size-1rem;
+}
+
+.nav_links {
+  margin-top: $size-1rem;
+  @include flex1();
+  margin-bottom: $size-1rem;
+  background-color: $colour1;
+}
+
+li {
+  padding: $size-1rem;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: $font2;
+}
+.main {
+  @include flex1();
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.section_text > h3 {
+  text-align: center;
+}
+
+.section_text,
+.section_images {
+  margin: $size-1rem;
+}
+
+.section_images {
+  @include flex1();
+  flex-flow: column nowrap;
+  align-items: center;
+}
+img {
+  height: 12rem;
+  width: 18rem;
+  margin: 0 0.5rem $size-1rem 0.5rem;
+}
+
+.aside {
+  @include flex1();
+  flex-flow: column nowrap;
+  margin: $size-1rem;
+}
+
+.first_aside,
+.second_aside,
+.third_aside,
+.fourth_aside {
+  @include asides();
+}
+
+.footer_links {
+  @include flex1();
+  margin-bottom: $size-1rem;
+}
+.footer {
+  height: 5rem;
+  margin-top: $size-1rem;
+  background-color: $colour2;
+}
+
+@media screen and (min-width: 600px) {
+  @include media-600px();
+}
